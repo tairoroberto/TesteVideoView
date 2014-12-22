@@ -27,12 +27,8 @@ public class MainActivity extends ActionBarActivity {
 		File file2 = new File(sdcard,"Movies/Red Hot Chili Peppers-Dani California.3gp");*/
 		
 		//Declara o VideoView
-		VideoView videoView = new VideoView(this);
-		
-		//Declara o linearLayout
-		LinearLayout layout = (LinearLayout)findViewById(R.id.LinearLayout1);
-		layout.addView(videoView);
-		
+		VideoView videoView = (VideoView)findViewById(R.id.videoView1);
+				
 		//Pega o caminho absoluto do video do sdcard
 	//	String src = file.getAbsolutePath();
 		
@@ -41,7 +37,10 @@ public class MainActivity extends ActionBarActivity {
 		
 		
 		//pega um video da internet
-		Uri src = Uri.parse("http://www.tairoroberto.kinghost.net/packages/teste_webservice/Red_Hot_Chili_Peppers-Dani_California.3gp");
+	//	Uri src = Uri.parse("http://www.tairoroberto.kinghost.net/packages/teste_webservice/Red_Hot_Chili_Peppers-Dani_California.3gp");
+		
+		//pegar um video de dentro do projeto
+		Uri src = Uri.parse("android.resource://br.com.tairoroberto.testevideoview/raw/dani_california");
 		videoView.setVideoURI(src);
 		//add os controles do video
 		
